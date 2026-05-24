@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faniyåkan Sinipok CHamoru Immersion School</title>
+  <meta name="description" content="Full CHamoru medium/immersion education for Pre-K through 6th grade at P.C. Lujan Elementary, Radio Barrigada, Guam. Now enrolling Pre-K and Kindergarten for SY 2026–27."/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap');
+
+    :root {
+      --teal:#0F6E56; --teal-dark:#085041; --teal-deeper:#04342C;
+      --teal-light:#9FE1CB; --teal-pale:#E1F5EE;
+      --terra:#D85A30; --terra-light:#F5C4B3; --terra-dark:#712B13;
+      --amber:#C97B00; --amber-bg:#FFF8EC;
+      --warm-bg:#FBF7F2; --warm-card:#F5EFE8; --warm-border:#E8DDD2;
+      --text-1:#1C1208; --text-2:#5C4A35; --text-3:#9C8B78;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--warm-bg);color:var(--text-1);line-height:1.5;font-size:16px}
+    a{color:var(--teal);text-decoration:none}
+    a:hover{text-decoration:underline}
+    input,textarea{display:block;width:100%;padding:10px 13px;border:1px solid var(--warm-border);border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:var(--text-1)}
+    input:focus,textarea:focus{outline:2px solid var(--teal);border-color:transparent}
+    .page{max-width:900px;margin:0 auto;padding:2rem 1.25rem 3rem}
+
+    /* SECTION LABEL */
+    .lbl{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+    .lbl-bar{width:3px;height:16px;background:var(--terra);flex-shrink:0}
+    .lbl-txt{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--terra)}
+    .sec{margin-bottom:2.25rem}
+    .sec h2{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:500;margin-bottom:1rem;color:var(--text-1);line-height:1.3}
+
+    /* CARDS */
+    .card{background:#fff;border:1px solid var(--warm-border);border-radius:12px;padding:1rem 1.25rem}
+    .card-warm{background:var(--warm-card);border:1px solid var(--warm-border);border-radius:12px;padding:1.25rem 1.5rem}
+
+    /* GRIDS */
+    .g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+    .g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+    .g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px}
+
+    /* HERO */
+    .hero{background:var(--teal);border-radius:20px;margin-bottom:1.75rem;padding:2.75rem 2rem 2.25rem;text-align:center;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;bottom:-10px;right:-10px;opacity:.07;pointer-events:none}
+    .hero-eyebrow{font-size:11px;letter-spacing:.1em;color:var(--teal-light);text-transform:uppercase;margin-bottom:.75rem}
+    .hero h1{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:600;color:var(--teal-pale);line-height:1.25;margin-bottom:.4rem}
+    .hero h2{font-size:13px;font-weight:400;color:var(--teal-light);margin-bottom:1.25rem}
+    .hero-tagline{font-size:15px;color:var(--teal-light);max-width:520px;margin:0 auto 1.5rem;line-height:1.75}
+    .logo-row{display:flex;justify-content:center;gap:12px;margin-bottom:1.25rem}
+    .logo-chip{width:46px;height:46px;border-radius:50%;background:var(--teal-dark);border:1.5px solid #5DCAA5;display:flex;align-items:center;justify-content:center}
+    .logo-chip i{font-size:18px;color:var(--teal-light)}
+    .photo-row{display:flex;justify-content:center;gap:16px;margin:1.5rem 0 1.75rem;flex-wrap:wrap}
+    .photo-circle{width:108px;height:108px;border-radius:50%;background:var(--teal-dark);border:2.5px solid #5DCAA5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+    .photo-circle i{font-size:22px;color:var(--teal-light)}
+    .photo-circle span{font-size:9px;color:var(--teal-light);line-height:1.4;text-align:center}
+    .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn-enroll{background:var(--teal-pale);color:var(--teal);font-weight:500;font-size:15px;padding:11px 26px;border-radius:8px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+    .btn-enroll:hover{background:var(--teal-light);text-decoration:none}
+    .btn-ghost{background:transparent;color:var(--teal-pale);font-weight:500;font-size:15px;padding:11px 26px;border-radius:8px;border:1.5px solid var(--teal-light);cursor:pointer;text-decoration:none;display:inline-block}
+    .btn-ghost:hover{background:rgba(159,225,203,.15);text-decoration:none}
+
+    /* ENROLL BANNER */
+    .banner{background:var(--teal-dark);border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:1.75rem;border:1px solid var(--teal)}
+    .banner h3{font-size:15px;font-weight:500;color:var(--teal-pale);margin-bottom:3px}
+    .banner p{font-size:13px;color:var(--teal-light)}
+    .badge-open{background:#FAC775;color:#412402;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;white-space:nowrap}
+
+    /* OPEN HOUSE */
+    .oh{background:var(--warm-card);border:2px dashed var(--terra);border-radius:14px;padding:1.5rem;margin-bottom:1.75rem;display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+    .oh-icon{font-size:36px;color:var(--terra);flex-shrink:0;margin-top:2px}
+    .oh-inner{flex:1;min-width:200px}
+    .oh-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
+    .oh-inner h3{font-size:17px;font-weight:500;margin-bottom:6px;color:var(--text-1)}
+    .oh-inner p{font-size:14px;color:var(--text-2);line-height:1.65;margin-bottom:10px}
+    .oh-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+    .oh-meta span{font-size:13px;color:var(--text-2);display:flex;align-items:center;gap:5px}
+    .oh-meta i{color:var(--terra)}
+    .btn-terra{background:var(--terra);color:#fff;font-weight:500;font-size:13px;padding:9px 20px;border-radius:8px;text-decoration:none;display:inline-block}
+    .btn-terra:hover{background:#b84a22;text-decoration:none}
+
+    /* WAVE */
+    .wave{display:block;width:100%;margin:0 0 1.75rem}
+
+    /* ELIGIBILITY */
+    .elig-note{font-size:13px;color:var(--text-3);margin-top:10px;display:flex;align-items:center;gap:6px}
+    .elig-note i{color:var(--teal)}
+    .grade-label{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin-bottom:6px}
+
+    /* WHO WE ARE */
+    .campus-note{font-size:12px;color:var(--text-3);border-top:1px solid var(--warm-border);padding-top:.75rem;margin-top:.75rem;display:flex;align-items:flex-start;gap:8px}
+    .campus-note i{color:var(--teal);flex-shrink:0;margin-top:2px}
+
+    /* PROGRAM COLS */
+    .feat-col h3{font-size:13px;font-weight:500;color:var(--terra);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+    .feat-col h3 i{font-size:17px}
+    .feat-col ul{list-style:none;padding:0}
+    .feat-col ul li{font-size:13px;color:var(--text-2);padding:5px 0;border-bottom:1px solid var(--warm-border);display:flex;gap:8px;line-height:1.55}
+    .feat-col ul li:last-child{border-bottom:none}
+    .feat-col ul li::before{content:"·";color:var(--terra);flex-shrink:0;font-size:18px;line-height:1.2}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid var(--warm-border)}
+    .faq-item:last-child{border-bottom:none}
+    .faq-btn{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:1rem 0;gap:12px;text-align:left;font-family:inherit}
+    .faq-btn:hover{opacity:.8}
+    .faq-q{font-size:14px;font-weight:500;color:var(--text-1);line-height:1.5}
+    .faq-icon{font-size:18px;color:var(--terra);flex-shrink:0;transition:transform .22s}
+    .faq-icon.open{transform:rotate(180deg)}
+    .faq-body{font-size:13px;color:var(--text-2);line-height:1.75;padding:0 0 1rem;display:none}
+    .faq-body.open{display:block}
+    .faq-tag{display:inline-block;font-size:11px;font-weight:500;background:var(--terra-light);color:var(--terra-dark);padding:2px 9px;border-radius:10px;margin-bottom:7px}
+
+    /* PORTAL */
+    .portal{background:#04342C;border-radius:16px;padding:1.5rem;margin-bottom:1.75rem}
+    .portal .lbl-bar{background:#5DCAA5}
+    .portal .lbl-txt{color:#5DCAA5}
+    .portal h2{color:var(--teal-pale);margin-bottom:.5rem}
+    .portal>p{font-size:14px;color:var(--teal-light);margin-bottom:1.25rem;line-height:1.6}
+    .portal-card{background:#085041;border-radius:10px;padding:1rem;border:1px solid var(--teal)}
+    .portal-card i{font-size:20px;color:#5DCAA5;display:block;margin-bottom:8px}
+    .portal-card h3{font-size:13px;font-weight:500;color:var(--teal-pale);margin-bottom:3px}
+    .portal-card p{font-size:12px;color:var(--teal-light);line-height:1.5}
+    .btn-portal{background:#5DCAA5;color:#04342C;font-weight:500;font-size:14px;padding:10px 22px;border-radius:8px;text-decoration:none;display:inline-block}
+    .btn-portal:hover{background:var(--teal-light);text-decoration:none}
+    .portal-soon{font-size:12px;color:#5DCAA5;margin-left:10px;vertical-align:middle}
+
+    /* INVOLVE */
+    .involve-card h3{font-size:14px;font-weight:500;margin-bottom:6px;display:flex;align-items:center;gap:8px;color:var(--text-1)}
+    .involve-card h3 i{color:var(--terra);font-size:17px}
+    .involve-card p{font-size:13px;color:var(--text-2);line-height:1.6}
+
+    /* CONTACT */
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+    @media(max-width:500px){.form-row{grid-template-columns:1fr}}
+    textarea{height:95px;resize:vertical;margin-bottom:10px}
+    .btn-submit{background:var(--teal);color:#fff;border:none;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;width:100%;font-family:inherit}
+    .btn-submit:hover{background:var(--teal-dark)}
+    .contact-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.25rem;font-size:13px;color:var(--text-2)}
+    .contact-meta span{display:flex;align-items:center;gap:6px}
+    .contact-meta i{color:var(--terra);font-size:16px}
+    .specialist{font-size:12px;color:var(--text-3);margin-top:6px}
+    .social-row{display:flex;gap:10px;margin-top:1.25rem;flex-wrap:wrap}
+    .social-chip{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-3);border:1px dashed var(--warm-border);padding:5px 12px;border-radius:20px}
+
+    /* FOOTER */
+    .footer{border-top:1px solid var(--warm-border);padding-top:1.25rem;text-align:center;font-size:12px;color:var(--text-3);line-height:1.9}
+    .footer strong{color:var(--text-2);font-weight:500}
+    .divider{border:none;border-top:1px solid var(--warm-border);margin:1.75rem 0}
+
+    @media(max-width:600px){
+      .hero h1{font-size:22px}
+      .photo-row{gap:10px}
+      .photo-circle{width:88px;height:88px}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <svg class="hero-bg" width="320" height="200" viewBox="0 0 320 200" aria-hidden="true">
+      <rect x="20" y="70" width="22" height="120" rx="3" fill="white"/>
+      <ellipse cx="31" cy="70" rx="30" ry="14" fill="white"/>
+      <rect x="90" y="35" width="22" height="155" rx="3" fill="white"/>
+      <ellipse cx="101" cy="35" rx="30" ry="14" fill="white"/>
+      <rect x="160" y="52" width="22" height="138" rx="3" fill="white"/>
+      <ellipse cx="171" cy="52" rx="30" ry="14" fill="white"/>
+      <rect x="230" y="18" width="22" height="172" rx="3" fill="white"/>
+      <ellipse cx="241" cy="18" rx="30" ry="14" fill="white"/>
+    </svg>
+
+    <div class="logo-row">
+      <div class="logo-chip" title="GDOE"><i class="ti ti-school"></i></div>
+      <div class="logo-chip" title="CHamoru Studies Division"><i class="ti ti-language"></i></div>
+      <div class="logo-chip" title="Faniyåkan Sinipok"><i class="ti ti-leaf"></i></div>
+    </div>
+
+    <svg width="148" height="42" viewBox="0 0 148 42" style="display:block;margin:0 auto .8rem;opacity:.55" aria-hidden="true">
+      <rect x="5" y="18" width="10" height="22" rx="1.5" fill="#9FE1CB"/>
+      <ellipse cx="10" cy="18" rx="13" ry="6" fill="#9FE1CB"/>
+      <rect x="40" y="9" width="10" height="31" rx="1.5" fill="#9FE1CB"/>
+      <ellipse cx="45" cy="9" rx="13" ry="6" fill="#9FE1CB"/>
+      <rect x="75" y="13" width="10" height="27" rx="1.5" fill="#9FE1CB"/>
+      <ellipse cx="80" cy="13" rx="13" ry="6" fill="#9FE1CB"/>
+      <rect x="110" y="6" width="10" height="34" rx="1.5" fill="#9FE1CB"/>
+      <ellipse cx="115" cy="6" rx="13" ry="6" fill="#9FE1CB"/>
+      <line x1="0" y1="40" x2="148" y2="40" stroke="#9FE1CB" stroke-width="1.2" opacity=".4"/>
+    </svg>
+
+    <p class="hero-eyebrow">CHamoru Medium/Immersion · P.C. Lujan Campus, Radio Barrigada · Guam</p>
+    <h1>Faniyåkan Sinipok<br>CHamoru Immersion School</h1>
+    <h2>Inetnon Manaina Faniyåkan Sinipok · Parent–Teacher Nonprofit</h2>
+    <p class="hero-tagline">Give your child the gift of language and culture. Faniyåkan offers full CHamoru medium/immersion education for Pre-K through 6th grade — building the next generation of fluent CHamoru speakers.</p>
+
+    <div class="photo-row">
+      <div class="photo-circle"><i class="ti ti-camera"></i><span>Cultural<br>activities</span></div>
+      <div class="photo-circle"><i class="ti ti-camera"></i><span>Classroom<br>learning</span></div>
+      <div class="photo-circle"><i class="ti ti-camera"></i><span>Community<br>events</span></div>
+    </div>
+
+    <div class="ctas">
+      <a href="https://tinyurl.com/faniyakanapply" target="_blank" rel="noopener" class="btn-enroll">Apply now — SY 2026–27</a>
+      <a href="#contact" class="btn-ghost">Get involved</a>
+    </div>
+  </div>
+
+  <!-- ENROLL BANNER -->
+  <div class="banner">
+    <div>
+      <h3>Now accepting applications — Pre-K and Kindergarten</h3>
+      <p>Limited spots for SY 2026–27. Apply early to secure your child's place.</p>
+    </div>
+    <span class="badge-open">Enrollment open</span>
+  </div>
+
+  <!-- OPEN HOUSE -->
+  <div class="oh">
+    <i class="ti ti-home-heart oh-icon" aria-hidden="true"></i>
+    <div class="oh-inner">
+      <p class="oh-label">Open house</p>
+      <h3>Come see our school — bring the whole family</h3>
+      <p>Meet our teachers, tour the campus, learn about our program, and ask questions. The best way to know if Faniyåkan is right for your child.</p>
+      <div class="oh-meta">
+        <span><i class="ti ti-calendar"></i><em>Date TBD</em></span>
+        <span><i class="ti ti-clock"></i><em>Time TBD</em></span>
+        <span><i class="ti ti-map-pin"></i>P.C. Lujan Elementary, Radio Barrigada</span>
+      </div>
+      <a href="mailto:jtsantos@gdoe.net?subject=Open House Interest – Faniyåkan Sinipok" class="btn-terra">Notify me when it's scheduled</a>
+    </div>
+  </div>
+
+  <!-- WAVE -->
+  <svg class="wave" viewBox="0 0 900 28" height="28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,14 C150,0 300,28 450,14 C600,0 750,28 900,14" fill="none" stroke="#E8DDD2" stroke-width="1.2"/>
+  </svg>
+
+  <!-- ELIGIBILITY -->
+  <div class="sec">
+    <div class="lbl"><div class="lbl-bar"></div><span class="lbl-txt">Eligibility</span></div>
+    <h2>Is your child ready to enroll?</h2>
+    <div class="g2">
+      <div class="card"><p class="grade-label">Kindergarten</p><p style="font-size:15px;font-weight:500;margin-bottom:5px;">5 years old by July 31, 2026</p><p style="font-size:13px;color:#5C4A35;">Must be living on Guam at enrollment.</p></div>
+      <div class="card"><p class="grade-label">Pre-K</p><p style="font-size:15px;font-weight:500;margin-bottom:5px;">4 years old by July 31, 2026</p><p style="font-size:13px;color:#5C4A35;">Must be living on Guam at enrollment.</p></div>
+    </div>
+    <p class="elig-note"><i class="ti ti-info-circle"></i> School hours: 8:30 a.m. – 2:43 p.m. · P.C. Lujan Elementary, Radio Barrigada · Grades Pre-K through 6</p>
+  </div>
+
+  <!-- WAVE -->
+  <svg class="wave" viewBox="0 0 900 28" height="28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,14 C150,28 300,0 450,14 C600,28 750,0 900,14" fill="none" stroke="#E8DDD2" stroke-width="1.2"/>
+  </svg>
+
+  <!-- WHO WE ARE -->
+  <div class="sec">
+    <div class="lbl"><div class="lbl-bar"></div><span class="lbl-txt">Who we are</span></div>
+    <h2>A school where CHamoru is the language of learning.</h2>
+    <div class="card-warm">
+      <p style="font-size:14px;line-height:1.75;color:#5C4A35;margin-bottom:.75rem;">Faniyåkan Sinipok CHamoru Immersion School provides full CHamoru medium/immersion education for Pre-K through 6th grade. All subjects are taught through CHamoru — building fluency naturally while meeting GDOE academic standards. Students also have access to Library, Counseling, GATE, After School, and Summer School programs.</p>
+      <p style="font-size:14px;line-height:1.75;color:#5C4A35;">Inetnon Manaina Faniyåkan Sinipok is our parent–teacher nonprofit — the community backbone supporting advocacy, programming, and family co-learning. The CHamoru Studies Division and Faniyåkan CHamoru Immersion Program are ADA Compliant.</p>
+      <div class="campus-note"><i class="ti ti-info-circle"></i><span>An independent CHamoru immersion school on the P.C. Lujan Elementary campus in Radio Barrigada — with our own identity, enrollment, and community.</span></div>
+    </div>
+  </div>
+
+  <!-- WAVE -->
+  <svg class="wave" viewBox="0 0 900 28" height="28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,14 C150,0 300,28 450,14 C600,0 750,28 900,14" fill="none" stroke="#E8DDD2" stroke-width="1.2"/>
+  </svg>
+
+  <!-- PROGRAM DETAILS -->
+  <div class="sec">
+    <div class="lbl"><div class="lbl-bar"></div><span class="lbl-txt">Program details</span></div>
+    <h2>Everything you need to know</h2>
+    <div class="g3">
+      <div class="card-warm feat-col">
+        <h3><i class="ti ti-gift"></i>Faniyåkan provides</h3>
+        <ul>
+          <li>Early bilingual development</li>
+          <li>Cultural identity and connection</li>
+          <li>Parent classes to co-learn CHamoru</li>
+          <li>Library, Counseling, and GATE</li>
+          <li>After School and Summer programs</li>
+        </ul>
+      </div>
+      <div class="card-warm feat-col">
+        <h3><i class="ti ti-checklist"></i>Requirements</h3>
+        <ul>
+          <li>Active participation in program activities</li>
+          <li>Family weekly class attendance</li>
+          <li>8 hours in-kind service per month</li>
+        </ul>
+      </div>
+      <div class="card-warm feat-col">
+        <h3><i class="ti ti-star"></i>Why Faniyåkan?</h3>
+        <ul>
+          <li>Full CHamoru language immersion</li>
+          <li>Develops proficient CHamoru speakers</li>
+          <li>Culturally integrated curriculum</li>
+          <li>Songs, dance, and storytelling</li>
+          <li>Small class, certified teachers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- WAVE -->
+  <svg class="wave" viewBox="0 0 900 28" height="28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,14 C150,28 300,0 450,14 C600,28 750,0 900,14" fill="none" stroke="#E8DDD2" stroke-width="1.2"/>
+  </svg>
+
+  <!-- FAQ -->
+  <div class="sec">
+    <div class="lbl"><div class="lbl-bar"></div><span class="lbl-txt">Frequently asked questions</span></div>
+    <h2>What parents ask most</h2>
+    <div class="card-warm" style="padding:0 1.25rem;">
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">Will my child fall behind in English?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body"><p class="faq-tag">Most common concern</p>Research consistently shows that immersion students perform at or above grade level in English — often outperforming peers in reading and literacy. Building strong foundations in CHamoru actively supports English language development. Faniyåkan students meet all GDOE academic standards.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">What if I don't speak CHamoru — can I still support my child?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body"><p class="faq-tag">Enrollment requirement</p>Yes — this is exactly what our program is built for. Faniyåkan offers parent classes designed for non-speakers to learn alongside their children. Our upcoming Parents Portal will include co-learning tools for home use. You don't need to speak CHamoru to enroll — you need to be willing to learn.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">How is this different from a regular GDOE public school?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body">All subjects — math, science, reading, social studies — are taught through CHamoru from day one. Students absorb the language naturally. Classes are smaller, the community is close-knit, and CHamoru culture is woven into everything we do, not treated as a separate subject.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">What counts as the 8 hours of monthly in-kind service?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body"><p class="faq-tag">Participation requirement</p>In-kind service includes volunteering at events, helping in the classroom, supporting administrative tasks, participating in cultural activities, and contributing to community programs. The school works with families to find service that fits their schedule and skills. Contact Tan Jocelyn Santos for a full list of qualifying activities.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">What do the weekly family classes look like?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body">Weekly family classes are structured CHamoru language sessions for parents and guardians — designed for beginners, no prior knowledge required. Family engagement expectations grow as students advance through grade levels, so starting in Pre-K or Kinder gives your family the best foundation. Contact the school for current session times.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">Is transportation provided to Radio Barrigada?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body">Transportation details depend on your village and GDOE busing routes. Contact Tan Jocelyn Santos at <a href="mailto:jtsantos@gdoe.net">jtsantos@gdoe.net</a> to discuss options for your family. School hours are 8:30 a.m. – 2:43 p.m.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">What if my child has an IEP or special education needs?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body"><p class="faq-tag">ADA compliant</p>Faniyåkan Sinipok is an ADA Compliant program under the CHamoru Studies Division of GDOE. Families with children who have IEPs or special education needs are encouraged to contact us directly so we can discuss how services can be coordinated. Every child's situation is considered individually.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">What grades does the school go up to?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body">Faniyåkan Sinipok accepts enrollment from Pre-K through 6th grade. Our marketing focus is on Pre-K and Kindergarten because early childhood immersion delivers the greatest language development benefit — and because enrollment for younger grades requires less prior family engagement to qualify. Families interested in grades 1–6 are welcome to contact us directly.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">How many spots are available, and how is selection handled?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body"><p class="faq-tag">Limited seats</p>Enrollment is limited to keep class sizes small and ensure personalized attention. Spots are filled on a first-come, first-qualified basis — early applications are strongly encouraged. Contact Tan Jocelyn Santos for current seat availability and selection criteria.</div>
+      </div>
+
+      <div class="faq-item" style="border-bottom:none;">
+        <button class="faq-btn" onclick="toggle(this)"><span class="faq-q">Is this a real GDOE school? Will records and credits transfer?</span><i class="ti ti-chevron-down faq-icon"></i></button>
+        <div class="faq-body">Yes. Faniyåkan Sinipok operates under the CHamoru Studies Division of the Guam Department of Education and is an ADA Compliant agency. Student records, credits, and academic progress are fully recognized within the GDOE system and transfer normally.</div>
+      </div>
+
+    </div>
+    <p style="font-size:13px;color:#9C8B78;margin-top:.75rem;display:flex;align-items:center;gap:6px;"><i class="ti ti-mail" style="color:#D85A30;"></i>More questions? Email <a href="mailto:jtsantos@gdoe.net">jtsantos@gdoe.net</a> — Tan Jocelyn Santos, CHamoru Language and Culture Specialist</p>
+  </div>
+
+  <!-- WAVE -->
+  <svg class="wave" viewBox="0 0 900 28" height="28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,14 C150,0 300,28 450,14 C600,0 750,28 900,14" fill="none" stroke="#E8DDD2" stroke-width="1.2"/>
+  </svg>
+
+  <!-- PARENTS PORTAL -->
+  <div class="portal">
+    <div class="lbl"><div class="lbl-bar"></div><span class="lbl-txt">Parents portal</span></div>
+    <h2>Your co-learning hub</h2>
+    <p>Manage membership, track participation, and learn CHamoru alongside your child.</p>
+    <div class="g4" style="margin-bottom:1.25rem;">
+      <div class="portal-card"><i class="ti ti-book-2"></i><h3>CHamoru co-learning</h3><p>Lessons and tools for the whole family.</p></div>
+      <div class="portal-card"><i class="ti ti-id-badge-2"></i><h3>Membership</h3><p>Status, renewal, household info.</p></div>
+      <div class="portal-card"><i class="ti ti-checklist"></i><h3>Participation</h3><p>Log hours and service requirements.</p></div>
+      <div class="portal-card"><i class="ti ti-bell"></i><h3>Announcements</h3><p>News, meetings, updates.</p></div>
+    </div>
+    <a href="mailto:jtsantos@gdoe.net?subject=Portal Access Request – Faniyåkan Sinipok" class="btn-portal">Request portal access</a>
+    <span class="portal-soon"><i class="ti ti-clock"></i> Launching soon</span>
+  </div>
+
+  <!-- GET INVOLVED -->
+  <div class="sec">
+    <div class="lbl"><div class="lbl-bar"></div><span class="lbl-txt">Get involved</span></div>
+    <h2>There's a place for you here</h2>
+    <div class="g4">
+      <div class="card involve-card"><h3><i class="ti ti-clipboard-list"></i>Enroll</h3><p>Pre-K and Kinder seats open now. <a href="https://tinyurl.com/faniyakanapply" target="_blank" rel="noopener">Apply today.</a></p></div>
+      <div class="card involve-card"><h3><i class="ti ti-users"></i>Volunteer</h3><p>Lend your time at events and school programs.</p></div>
+      <div class="card involve-card"><h3><i class="ti ti-calendar-event"></i>Meetings</h3><p>Join our regular meetings and have a voice.</p></div>
+      <div class="card involve-card"><h3><i class="ti ti-share"></i>Spread the word</h3><p>Know a family with a preschooler? Tell them.</p></div>
+    </div>
+  </div>
+
+  <!-- WAVE -->
+  <svg class="wave" viewBox="0 0 900 28" height="28" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,14 C150,28 300,0 450,14 C600,28 750,0 900,14" fill="none" stroke="#E8DDD2" stroke-width="1.2"/>
+  </svg>
+
+  <!-- CONTACT -->
+  <div class="card-warm" id="contact" style="margin-bottom:1.75rem;">
+    <div class="lbl"><div class="lbl-bar"></div><span class="lbl-txt">Contact us</span></div>
+    <h2>We'd love to hear from you</h2>
+    <p style="font-size:14px;color:#5C4A35;margin-bottom:1.25rem;line-height:1.6;">Questions about enrollment, the program, or how to get involved? Send us a message.</p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your name" required/>
+        <input type="email" name="email" placeholder="Email address" required/>
+      </div>
+      <textarea name="message" placeholder="Tell us about your child's age, how you heard about Faniyåkan, or how you'd like to get involved." required></textarea>
+      <button type="submit" class="btn-submit">Send message</button>
+    </form>
+    <div class="contact-meta">
+      <span><i class="ti ti-map-pin"></i>P.C. Lujan Elementary, Radio Barrigada, Guam</span>
+      <span><i class="ti ti-mail"></i><a href="mailto:jtsantos@gdoe.net">jtsantos@gdoe.net</a></span>
+    </div>
+    <p class="specialist">Tan Jocelyn Santos, CHamoru Language and Culture Specialist</p>
+    <div class="social-row">
+      <span class="social-chip"><i class="ti ti-brand-facebook"></i>Facebook — coming soon</span>
+      <span class="social-chip"><i class="ti ti-brand-instagram"></i>Instagram — coming soon</span>
+      <span class="social-chip"><i class="ti ti-brand-whatsapp"></i>WhatsApp — coming soon</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <svg width="64" height="20" viewBox="0 0 64 20" style="display:block;margin:0 auto .75rem;opacity:.25;" aria-hidden="true">
+      <rect x="2" y="7" width="6" height="12" rx="1" fill="currentColor"/><ellipse cx="5" cy="7" rx="8" ry="3.5" fill="currentColor"/>
+      <rect x="20" y="4" width="6" height="15" rx="1" fill="currentColor"/><ellipse cx="23" cy="4" rx="8" ry="3.5" fill="currentColor"/>
+      <rect x="38" y="6" width="6" height="13" rx="1" fill="currentColor"/><ellipse cx="41" cy="6" rx="8" ry="3.5" fill="currentColor"/>
+      <rect x="54" y="2" width="6" height="17" rx="1" fill="currentColor"/><ellipse cx="57" cy="2" rx="8" ry="3.5" fill="currentColor"/>
+      <line x1="0" y1="19" x2="64" y2="19" stroke="currentColor" stroke-width=".8"/>
+    </svg>
+    <strong>Faniyåkan Sinipok CHamoru Immersion School</strong><br>
+    Inetnon Manaina Faniyåkan Sinipok · P.C. Lujan Elementary Campus, Radio Barrigada · Guam<br>
+    The CHamoru Studies Division and the Faniyåkan CHamoru Immersion Program are an ADA Compliant agency.<br>
+    © 2026 · All rights reserved
+  </div>
+
+</div>
+<script>
+  function toggle(btn){
+    var icon=btn.querySelector('.faq-icon');
+    var body=btn.nextElementSibling;
+    var open=body.classList.contains('open');
+    document.querySelectorAll('.faq-body').forEach(function(b){b.classList.remove('open')});
+    document.querySelectorAll('.faq-icon').forEach(function(i){i.classList.remove('open')});
+    if(!open){body.classList.add('open');icon.classList.add('open')}
+  }
+</script>
+</body>
+</html>
